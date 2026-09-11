@@ -28,3 +28,7 @@
 .parent.active .contains-link{
     display: block;
 }
+
+.parent.active .sidebarLeft .sidebar-content{
+    display: block;
+}

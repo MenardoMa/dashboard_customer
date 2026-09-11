@@ -47,6 +47,11 @@
     width: 100%;
     padding-top: 69px;
     overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 ul .header-nav{
@@ -81,6 +86,11 @@ ul .link-section{
 .link-section a:hover{
     color: var(--add-menu-item-hover);
     transition: all .3s;
+}
+
+/* Active Link */
+.link-section a.active{
+    color: var(--ad-dark-menu-item-active);
 }
 
 a .group-nav{
