@@ -1,0 +1,30 @@
+/* SIDEBAR LEFT */
+.parent.active .sidebarLeft{
+    width: 260px;
+    transition: all .3s;
+}
+
+/* Navbar */
+.parent.active .navbar .nav-container{
+    grid-template-columns: 260px 1fr;
+    transition: all .3s;
+}
+
+/* CONTENT */
+.parent.active .content{
+    width: calc(100% - 260px);  
+    margin-left: 260px;
+    transition: all .3s;
+}
+
+
+.parent.active .link-icon i{
+    font-size: 1.1rem;
+}
+
+.parent.active .link-name,
+.parent.active .count-menu,
+.parent.active .header-nav,
+.parent.active .contains-link{
+    display: block;
+}

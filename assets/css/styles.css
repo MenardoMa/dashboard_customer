@@ -1,0 +1,234 @@
+/* == FONT == */
+
+@font-face {
+    font-family: "MontSerra";
+    display: swap;
+    font-style: normal;
+    src: url("../fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto";
+    display: swap;
+    font-style: normal;
+    src: url("../fonts/Roboto-VariableFont_wdth\,wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Mozilla";
+    display: swap;
+    font-style: normal;
+    src: url("../fonts/MozillaText-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+    font-family: "OpenSans";
+    display: swap;
+    font-style: normal;
+    src: url("../fonts/OpenSans-VariableFont_wdth\,wght.ttf") format("truetype");
+}
+
+
+@font-face {
+/* Define your font */
+    font-family: "Nunito";
+    display: swap;
+    font-style: normal;
+    src: url("../fonts/Nunito-VariableFont_wght.ttf") format("truetype");
+}
+
+/* == COLOR == */
+
+:root{
+    --ad-color-black: #000;
+    --ad-color-white: #FFF;
+    --ad-color-gray: #98a6ad;
+    --ad-gray-dark: #343a40;
+
+    --ad-color-blue: #2c8ef8;
+    --ad-color-indigo: #727cf5;
+    --ad-color-purple: #6b5eae;
+
+    --ad-color-primary: #727cf5;
+    --ad-color-secondary: #6c757d;
+
+    --ad-color-light: #eef2f7;
+    --ad-color-dark: #313a46;
+
+    --ad-color-dark-menu-item: #8391a2;
+
+    --ad-color-bg-sidebarleft: #313a46;
+
+    --ad-box-shadow: 0px 0px 35px 0px rgba(154, 161, 171, 0.15);
+    --ad-box-shadow-sm: 0 .125rem .25rem rgba(0, 0, 0, 0.075);
+    --ad-box-shadow-lg: 0 0 45px 0 rgba(0, 0, 0, 0.12);
+    --ad-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+
+    --ad-dark-menu-item: #8391a2;
+    --ad-dark-menu-item-hover: #bccee4;
+    --ad-dark-menu-item-active: #fff;
+
+    --ad-color-bg: #fafbfe;
+    --ad-body-font-size: .9rem;
+    --ad-body-font-weight: 400;
+    --ad-body-line-height: 1.5;
+}
+
+/* == RESET == */
+
+*,*::before,*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    line-height: 1.4;
+    font-size: 1.1rem;
+    color: var(--color-black);
+    background-color: var(--ad-color-bg);
+    font-family: "Nunito", sans-serif, serif;
+    overflow-x: hidden;
+}
+
+a,
+img, 
+input, 
+span, 
+button{
+    display: block;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+button,
+input{
+    background: none;
+    border: none;
+}
+
+h1,
+h2,
+h3,
+h4{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+p{
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-size: clamp(1rem, 18rem, 1.1rem);
+}
+
+ul, li{
+    list-style-type: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* == UTILITY == */
+
+.container{
+    margin: 0 auto;
+    width: 100%;
+    padding-inline: 1rem;
+}
+
+.btn{
+    position: relative;
+    max-width: max-content;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    font-size: 0.938rem;
+    font-weight: normal;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    border-radius: 3px;
+    padding: .44rem 1rem;
+    font-weight: 500;
+}
+
+.btn-primary{
+    background-color: #171717;
+    color: #FFF;
+}
+
+.btn-secondary{
+    background-color: #f5f5f5;
+    color: #171717;
+}
+
+.btn-light{
+    background-color: var(--color-white);
+}
+
+
+.boite-shadow{
+    /* 1 */
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    /* 2 */
+    box-shadow: rgba(14, 63, 126, 0.06) 0px 0px 0px 1px, rgba(42, 51, 70, 0.03) 
+    0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 2px 2px -1px, rgba(42, 51, 70, 0.04) 
+    0px 3px 3px -1.5px, rgba(42, 51, 70, 0.03) 0px 5px 5px -2.5px, rgba(42, 51, 70, 0.03) 
+    0px 10px 10px -5px, rgba(42, 51, 70, 0.03) 0px 24px 24px -8px;
+    /* 3 */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+/* == MEDIA == */
+
+@media (min-width: 640px){
+    .container{
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px){
+    .container{
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px){
+    .container{
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1024px){
+    .container{
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1200px){
+    .container{
+        max-width: 1200px;
+    }
+}
+
+/* @media (min-width: 1500px){
+    .container{
+        max-width: 1500px;
+    }
+} */
