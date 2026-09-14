@@ -32,3 +32,11 @@
 .parent.active .sidebarLeft .sidebar-content{
     display: block;
 }
+
+/* Accordeon navLink active*/
+.accordion-link.active .contains-link ul{
+
+    grid-template-rows: 1fr;
+    transition: all .3s ease;
+
+}

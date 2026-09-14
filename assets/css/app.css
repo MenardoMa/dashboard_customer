@@ -89,7 +89,7 @@ ul .link-section{
 }
 
 /* Active Link */
-.link-section a.active{
+.accordion-link.active > a{
     color: var(--ad-dark-menu-item-active);
 }
 
@@ -105,9 +105,22 @@ a .group-nav{
 
 .link-section .contains-link{
     position: relative;
+    overflow: hidden;
 }
 
 .contains-link ul{
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: all .3s ease;
+
+}
+
+.contains-link ul > div {
+    overflow: hidden;
     padding-left: 35px;
 }
 

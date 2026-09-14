@@ -1,6 +1,11 @@
 
 const parent = document.querySelector(".parent")
 
+/**
+ * 
+ * Hamburgeur
+ * 
+ */
 const showSidebarLeft = () => {
     
     const navHamb = document.querySelector(".nav-hamb")
@@ -20,4 +25,39 @@ const showSidebarLeft = () => {
 
 }
 
+/**
+ * 
+ * Show Link sidebar accordion
+ * 
+ */
+const showLinkAccordeon = () => {
+    
+    const accordionLinks = document.querySelectorAll(".accordion-link");
+
+    accordionLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Cherche l'élément actuellement actif
+            const activeLink = document.querySelector(".accordion-link.active");
+
+            // Si un élément est actif, on lui retire active
+            if (activeLink) {
+                activeLink.classList.remove("active");
+            }
+
+            // Si l'élément cliqué n'était pas l'ancien actif,
+            // on lui ajoute active
+            if (activeLink !== e.currentTarget) {
+                e.currentTarget.classList.add("active");
+            }
+        });
+    });
+};
+
+
+
 showSidebarLeft()
+showLinkAccordeon()
