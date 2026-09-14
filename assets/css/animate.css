@@ -25,7 +25,8 @@
 .parent.active .link-name,
 .parent.active .count-menu,
 .parent.active .header-nav,
-.parent.active .contains-link{
+.parent.active .contains-link,
+.parent.active .badge-pages-menu{
     display: block;
 }
 
@@ -34,6 +35,16 @@
 }
 
 /* Accordeon navLink active*/
+.accordion-link.active > a{
+    color: var(--ad-dark-menu-item-active);
+    transition: all .3s ease;
+}
+
+.accordion-link.active > a .count-menu {
+    transform: rotate(90deg);
+    transition: all .3s ease;
+}
+
 .accordion-link.active .contains-link ul{
 
     grid-template-rows: 1fr;

@@ -83,14 +83,28 @@ ul .link-section{
     transition: all .3s;
 }
 
+a .badge-pages-menu{
+    background-color: var(--ad-bg-badge);
+    padding: .1rem .3rem;
+    font-size: .8rem;
+    color: var(--ad-color-white);
+    border-radius: .5rem;
+    display: none;
+}
+
 .link-section a:hover{
     color: var(--add-menu-item-hover);
     transition: all .3s;
 }
 
-/* Active Link */
-.accordion-link.active > a{
-    color: var(--ad-dark-menu-item-active);
+.accordion-link > a{
+    color: inherit;
+    transition: all .3s ease;
+}
+
+.accordion-link > a .count-menu {
+    transform: rotate(0);
+    transition: all .3s ease;
 }
 
 a .group-nav{
