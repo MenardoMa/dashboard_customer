@@ -1,53 +1,19 @@
-/* SIDEBAR LEFT */
+/** ACTIVE SIDE BAR LEFT **/
 .parent.active .sidebarLeft{
-    width: 260px;
-    transition: all .3s;
+    transform: translateX(0);
+    transition: all .3s ease;
 }
 
-/* Navbar */
-.parent.active .navbar .nav-container{
-    grid-template-columns: 260px 1fr;
-    transition: all .3s;
-}
-
-/* CONTENT */
-.parent.active .content{
-    width: calc(100% - 260px);  
-    margin-left: 260px;
-    transition: all .3s;
-}
-
-
-.parent.active .link-icon i{
-    font-size: 1.1rem;
-}
-
-.parent.active .link-name,
-.parent.active .count-menu,
-.parent.active .header-nav,
-.parent.active .contains-link,
-.parent.active .badge-pages-menu{
-    display: block;
-}
-
-.parent.active .sidebarLeft .sidebar-content{
-    display: block;
-}
-
-/* Accordeon navLink active*/
 .accordion-link.active > a{
-    color: var(--ad-dark-menu-item-active);
-    transition: all .3s ease;
+    color: var(--ad-color-white);
 }
 
-.accordion-link.active > a .count-menu {
-    transform: rotate(90deg);
-    transition: all .3s ease;
-}
-
-.accordion-link.active .contains-link ul{
-
+.accordion-link.active ul{
     grid-template-rows: 1fr;
     transition: all .3s ease;
+}
 
+.accordion-link.active .count-menu{
+    transform: rotate(90deg);
+    transition: all .3s ease;
 }
