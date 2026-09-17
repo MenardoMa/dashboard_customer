@@ -48,10 +48,6 @@
         gap: 1rem;
     }
 
-    .items .info-user{
-        display: block;
-    }
-
     .items.language .name,
     .items.language .icons{
         display: block;
@@ -60,11 +56,6 @@
     nav .navbar,
     .content .container-content{
         padding-inline: 24px;
-    }
-
-    /* Last items */
-    .navRight .user {
-        flex: 0 0 180px;
     }
 
     /** ACTIVE SIDE BAR LEFT LOGIQUE **/
@@ -101,6 +92,10 @@
         pointer-events: none;
     }
 
+    .logo-content .btn-close{
+        display: none;
+    }
+
 }
 
 @media (min-width: 1024px) {
@@ -131,6 +126,15 @@
 
     .link-section a {
         justify-content: space-between;
+    }
+
+    /* Last items */
+    .navRight .user {
+        flex: 0 0 180px;
+    }
+
+    .items .info-user{
+        display: block;
     }
 
     /* NAV BAR ITEMS */
