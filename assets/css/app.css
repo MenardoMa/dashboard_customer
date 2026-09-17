@@ -209,9 +209,147 @@ main{
 
 /* CONTENT */
 .content{
+    position: relative;
     /* transition: all .3s ease; */
+}
+
+/* NAV BAR */
+
+nav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    align-self: start;
+    background-color: var(--ad-color-white);
+    box-shadow: var(--ad-box-shadow);
+    z-index: 50;
+}
+
+nav .navbar{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-inline: 1rem;
+    display: flex;
+    justify-content: space-between;
+    color: #98a6ad;
+}
+
+.navbar .navItem{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    height: 100%;
+    width: 100%;
+}
+
+.navItem.navRight{
+    justify-content: flex-end;
+}
+
+.navItem .items{
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+    flex: 0;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding-inline: .3rem;
+    /* background-color: red; */
+    transition: all .3s;
+}
+
+.navItem .items:hover{
+    opacity: .7;
+    transition: all .3s;
+}
+
+.items svg,
+.items i{
+    font-size: 1.2rem;
+    line-height: 70px;
+}
+
+.items.search{
+    display: none;
+}
+
+.items .image-content{
+    position: relative;
+    overflow: hidden;
+    height: 32px;
+    width: 32px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.items .info-user{
+    display: none;
+}
+
+.items.user{
+    background-color: #fafbfd;
+    border: 1px solid #f1f3fa;
+    border-width: 0 1px;
+    padding-inline: 1rem;
+}
+
+.items.language .name{
+    font-size: .92rem;
+}
+
+.icons svg{
+    font-size: .8rem;
+}
+
+.items.language .flags{
+    position: relative;
+    overflow: hidden;
+    width: 20px;
+}
+
+.items.language .name,
+.items.language .icons{
+    display: none;
+}
+
+.image-content img,
+.flags img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.info-user p{
+    margin: 0;
+}
+
+.info-user p:first-child{
+    font-size: .92rem;
+}
+
+.info-user p:last-child{
+    margin-top: -4px;
+    font-size: .9rem;
+    font-weight: 400;
 }
 
 .content .container-content{
     padding-inline: 1rem;
+    padding-block: 1rem;
+    width: 100%;
+    height: auto;
+    /* background-color: red; */
+}
+
+.container-content .header-content{
+    padding-block: 1rem;
+}
+
+.header-content .title{
+    margin-bottom: 0;
 }
