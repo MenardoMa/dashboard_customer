@@ -6,24 +6,23 @@ const parent = document.querySelector(".parent")
  * Hamburgeur
  * 
  */
-// const showSidebarLeft = () => {
+const showSidebarLeft = () => {
     
-//     const navHamb = document.querySelector(".nav-hamb")
+    const navHamb = document.querySelector(".nav-hamb")
 
-//     navHamb.addEventListener("click", (e) => {
+    navHamb.addEventListener("click", (e) => {
         
-//         e.preventDefault()
+        e.preventDefault()
 
-//         if(!parent.classList.contains("active")){
-//             parent.classList.add("active")
-//         }else{
-//             parent.classList.remove("active")
-//         }
+        if(!parent.classList.contains("active")){
+            parent.classList.add("active")
+        }else{
+            parent.classList.remove("active")
+        }
 
+    })
 
-//     })
-
-// }
+}
 
 /**
  * 
@@ -59,5 +58,5 @@ const showLinkAccordeon = () => {
 
 
 
-// showSidebarLeft()
+showSidebarLeft()
 showLinkAccordeon()

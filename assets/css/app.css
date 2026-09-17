@@ -31,10 +31,15 @@
     width: 100%;
     max-width: 260px;
     transform: translateX(-260px);
-    z-index: 50;
+    z-index: 99;
     background-color: var(--ad-color-bg-sidebarleft);
     color: var(--ad-dark-menu-item);
     /* transition: all .3s ease; */
+    transition: all .3s ease;
+}
+
+.sidebarRight{
+    transform: translateX(0);
 }
 
 .sidebarLeft{
@@ -199,6 +204,10 @@ a .count-menu{
     font-size: .75rem;
 }
 
+.activeSidebar{
+    display: none;
+    font-size: .75rem;
+}
 
 
 /* MAIN */

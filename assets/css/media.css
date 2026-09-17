@@ -67,6 +67,32 @@
         flex: 0 0 180px;
     }
 
+    /** ACTIVE SIDE BAR LEFT LOGIQUE **/
+    .parent.active .sidebarLeft{
+        width: 260px;
+    }
+
+    .parent.active .header-nav,
+    .parent.active .link-name,
+    .parent.active .badge-pages-menu,
+    .parent.active .logoWebsite,
+    .parent.active .count-menu,
+    .parent.active .contains-link{
+        display: block;
+    }
+
+    .parent.active ul .link-section {
+        align-items: flex-start;
+    }
+
+    .parent.active .link-section a {
+        justify-content: space-between;
+    }
+
+    .parent.active .sidebarLeft .container-sidebarLeft{
+        padding-inline: 1rem;
+    }
+
 }
 
 @media (min-width: 1024px) {
@@ -104,5 +130,40 @@
     .items.search-icons{
         display: none;
     }
+
+    /** ACTIVE SIDE BAR LEFT LOGIQUE **/
+    .parent.active .sidebarLeft{
+        position: sticky;
+        width: 70px;
+        align-self: start;
+        transform: translateX(0);
+    }
+
+    .parent.active .header-nav,
+    .parent.active .link-name,
+    .parent.active .badge-pages-menu,
+    .parent.active .logoWebsite,
+    .parent.active .count-menu,
+    .parent.active .contains-link{
+        display: none;
+    }
+
+    .parent.active ul .link-section {
+        align-items: center;
+    }
+
+    .parent.active .sidebarLeft .container-sidebarLeft{
+        padding-inline: 0;
+    }
+
+    .parent.active .link-section a {
+        justify-content: center;
+    }
+
+    .parent.active .sidebarLeftTop .logo-content,
+    .parent.active .logo-content a  {
+        justify-content: center;
+    }
+
     
 }
