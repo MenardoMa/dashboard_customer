@@ -19,6 +19,7 @@
 
 /* BODY */
 .parent{
+    position: relative;
     display: grid;
 }
 
@@ -40,11 +41,6 @@
 
 .sidebarRight{
     transform: translateX(0);
-}
-
-.sidebarLeft{
-    border-right: 1px solid var(--ad-dark-menu-item);
-    padding-right: 0;
 }
 
 .sidebarLeft:hover ::-webkit-scrollbar-thumb {
@@ -207,6 +203,21 @@ a .count-menu{
 .activeSidebar{
     display: none;
     font-size: .75rem;
+}
+
+/* OVERLYNE */
+
+.overlyne{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all .3s ease;
+    z-index: 98;
+    opacity: 0;
+    visibility: hidden;
 }
 
 

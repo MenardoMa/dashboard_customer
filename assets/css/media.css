@@ -93,6 +93,14 @@
         padding-inline: 1rem;
     }
 
+    /* OVERLYNE */
+    .overlyne{
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
 }
 
 @media (min-width: 1024px) {

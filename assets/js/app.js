@@ -26,6 +26,23 @@ const showSidebarLeft = () => {
 
 /**
  * 
+ * Close sidebarLeft
+ * 
+ */
+const closeSidebarLeft = () => {
+    
+    const overlyne = document.querySelector(".overlyne")
+    overlyne.addEventListener("click", (e) => {
+        
+        e.preventDefault()
+        parent.classList.remove("active")
+
+    })
+}
+
+
+/**
+ * 
  * Show Link sidebar accordion
  * 
  */
@@ -60,3 +77,4 @@ const showLinkAccordeon = () => {
 
 showSidebarLeft()
 showLinkAccordeon()
+closeSidebarLeft()

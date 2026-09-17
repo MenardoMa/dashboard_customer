@@ -25,3 +25,12 @@
     transform: rotate(90deg);
     transition: all .3s ease;
 }
+
+/* OVERLYNE */
+
+.parent.active .overlyne{
+    opacity: 1;
+    visibility: visible;
+    /* pointer-events: all; */
+    transition: all .3s ease;
+}
