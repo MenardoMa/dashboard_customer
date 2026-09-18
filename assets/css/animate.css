@@ -34,3 +34,18 @@
     /* pointer-events: all; */
     transition: all .3s ease;
 }
+
+/* BRANDS MENU DROP */
+
+.brands-links.active{
+    color: var(--ad-color-dark);
+    transition: all .3s ease;
+}
+
+.menu-drop-brands.active{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+    transition: all .3s ease;
+}

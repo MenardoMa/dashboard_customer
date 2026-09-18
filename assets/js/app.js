@@ -40,6 +40,11 @@ const closeSidebarLeftOverlyne = () => {
     })
 }
 
+/**
+ * 
+ * Close sidebarLeft
+ * 
+ */
 const closeSidebarLeftBtn = () => {
     
     const btnClose = document.querySelector(".btn-close")
@@ -85,8 +90,32 @@ const showLinkAccordeon = () => {
 };
 
 
+const showBrands = () => {
+    
+    const brandsLinks = document.querySelector(".brands-links")
+    const menuDropBrands = document.querySelector(".menu-drop-brands")
+
+    brandsLinks.addEventListener("click", (e) => {
+
+        e.preventDefault()
+
+        if(menuDropBrands.classList.contains("active")){
+            menuDropBrands.classList.remove("active")
+            brandsLinks.classList.remove("active")
+        }else{
+            menuDropBrands.classList.add("active")
+            brandsLinks.classList.add("active")
+        }
+
+    })
+
+}
+
+
 
 showSidebarLeft()
 showLinkAccordeon()
 closeSidebarLeftOverlyne()
 closeSidebarLeftBtn()
+
+showBrands()
