@@ -32,10 +32,20 @@ const showSidebarLeft = () => {
 const closeSidebarLeftOverlyne = () => {
     
     const overlyne = document.querySelector(".overlyne")
+    const sidebarRight = document.querySelector(".sidebarRight")
+    
     overlyne.addEventListener("click", (e) => {
         
         e.preventDefault()
-        parent.classList.remove("active")
+
+        if(!sidebarRight.classList.contains("active")){
+            parent.classList.remove("active")
+        }
+
+        if(overlyne.classList.contains("active")){
+            overlyne.classList.remove("active")
+            sidebarRight.classList.remove("active")
+        }
 
     })
 }
@@ -48,12 +58,33 @@ const closeSidebarLeftOverlyne = () => {
 const closeSidebarLeftBtn = () => {
     
     const btnClose = document.querySelector(".btn-close")
+    const btnCloseSidebarLeft = document.querySelector(".btn-closeSidebarLeft")
+
+    const overlyne = document.querySelector(".overlyne")
+    const sidebarRight = document.querySelector(".sidebarRight")
+
     btnClose.addEventListener("click", (e) => {
         
         e.preventDefault()
         parent.classList.remove("active")
 
     })
+
+    btnCloseSidebarLeft.addEventListener("click", (e) => {
+        
+        e.preventDefault()
+        
+        if(!sidebarRight.classList.contains("active")){
+            parent.classList.remove("active")
+        }
+
+        if(overlyne.classList.contains("active")){
+            overlyne.classList.remove("active")
+            sidebarRight.classList.remove("active")
+        }
+
+    })
+
 }
 
 
@@ -89,7 +120,11 @@ const showLinkAccordeon = () => {
     });
 };
 
-
+/**
+ * 
+ * Show Nav Drop Brands
+ * 
+ */
 const showBrands = () => {
     
     const brandsLinks = document.querySelector(".brands-links")
@@ -111,6 +146,39 @@ const showBrands = () => {
 
 }
 
+/**
+ * 
+ * Show SidebarRight
+ * 
+ */
+const showSidebarRight = () => {
+
+    const settings = document.querySelector(".settings")
+    const overlyne = document.querySelector(".overlyne")
+    const sidebarRight = document.querySelector(".sidebarRight")
+
+    const menuDropBrands = document.querySelector(".menu-drop-brands")
+    const brandsLinks = document.querySelector(".brands-links")
+
+    settings.addEventListener("click", (e) => {
+
+        e.preventDefault()
+
+        menuDropBrands.classList.remove("active")
+        brandsLinks.classList.remove("active")
+
+        if(sidebarRight.classList.contains("active")){
+            sidebarRight.classList.remove("active")
+            overlyne.classList.remove("active")
+        }else{
+            sidebarRight.classList.add("active")
+            overlyne.classList.add("active")
+        }
+
+    })
+
+}
+
 
 
 showSidebarLeft()
@@ -119,3 +187,4 @@ closeSidebarLeftOverlyne()
 closeSidebarLeftBtn()
 
 showBrands()
+showSidebarRight()

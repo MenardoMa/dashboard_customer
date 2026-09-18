@@ -35,12 +35,7 @@
     z-index: 99;
     background-color: var(--ad-color-bg-sidebarleft);
     color: var(--ad-dark-menu-item);
-    /* transition: all .3s ease; */
     transition: all .3s ease;
-}
-
-.sidebarRight{
-    transform: translateX(0);
 }
 
 .sidebarLeft:hover ::-webkit-scrollbar-thumb {
@@ -48,9 +43,63 @@
 }
 
 .sidebarRight{
+    transform: translateX(280px);
     right: 0;
     left: auto;
-    display: none;
+    max-width: 280px;
+    background-color: var(--ad-color-white);
+    box-shadow: 0 0 24px 0 rgba(49, 58, 70, .1), 0 1px 0 0 rgba(49, 58, 70, .08);
+    display: block;
+    transition: all .3s ease;
+}
+
+.sidebarRight .sidebarRightContent{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 70px 1fr;
+}
+
+.sidebarRightContent .rows{
+    position: relative;
+    padding-inline: 1rem;
+}
+
+.sidebarRightContent .rows,
+.rows .content-rows{
+    height: 100%;
+    width: 100%;
+}
+
+.rows .content-rows .title{
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: var(--ad-color-white);
+}
+
+.rows .content-rows.header-sidebar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-sidebar .btn-closeSidebarLeft{
+    color: var(--ad-color-white);
+    cursor: pointer;
+    height: 27px;
+    width: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ad-dark-btn-bg);
+    font-size: .7rem;
+    border-radius: 50%;
+}
+
+.sidebarRightContent .rows:first-child{
+    background-color: var(--ad-color-bg-sidebarleft);
 }
 
 .sidebarLeft .container-sidebarLeft{
@@ -61,6 +110,23 @@
     display: grid;
     overflow-y: scroll;
     grid-template-rows: 70px 1fr;
+}
+
+.rows .content-rows.contentSidebar{
+    padding-top: 1rem;
+}
+
+.contentSidebar .message{
+    position: relative;
+    padding: .6rem;
+    border-radius: 3px;
+    color: #f2b300;
+    background-color: rgba(255, 188, 0, .18);
+    border-color: rgba(255, 188, 0, .25);
+}
+
+.message p{
+    font-size: .95rem;
 }
 
 .sidebar-content,

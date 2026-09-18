@@ -102,6 +102,16 @@
         pointer-events: none;
     }
 
+    .overlyne.active{
+        display: block;
+        z-index: 110;
+        pointer-events: auto;
+    }
+
+    .sidebarRight{
+        z-index: 111;
+    }
+
     .logo-content .btn-close{
         display: none;
     }
@@ -186,6 +196,5 @@
     .parent.active .logo-content a  {
         justify-content: center;
     }
-
     
 }

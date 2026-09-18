@@ -31,7 +31,6 @@
 .parent.active .overlyne{
     opacity: 1;
     visibility: visible;
-    /* pointer-events: all; */
     transition: all .3s ease;
 }
 
@@ -47,5 +46,19 @@
     visibility: visible;
     pointer-events: all;
     transform: translateY(0);
+    transition: all .3s ease;
+}
+
+/* SIDEBAR RIGHT */
+
+.sidebarRight.active{
+    transform: translateX(0);
+     transition: all .3s ease;
+}
+
+
+.overlyne.active{
+    opacity: 1;
+    visibility: visible;
     transition: all .3s ease;
 }
