@@ -549,7 +549,9 @@ a .count-notification{
     height: 400px;
     width: 320px;
     pointer-events: auto;
-    transform: translateX(153px);
+    transform: translateX(153px) translateY(4px);
+    opacity: 0;
+    visibility: hidden;
 }
  
 

@@ -116,7 +116,7 @@
 
     /* menu-drop-notification */
     .items .menu-drop-notification {
-        transform: translateX(0);
+        transform: translateX(0) translateY(0);
     }
 
 }

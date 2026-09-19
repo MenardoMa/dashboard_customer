@@ -129,10 +129,17 @@ const showBrands = () => {
     
     const brandsLinks = document.querySelector(".brands-links")
     const menuDropBrands = document.querySelector(".menu-drop-brands")
+    const menuDropNotification = document.querySelector(".menu-drop-notification")
+    const notificationLinks = document.querySelector(".notification-links")
 
     brandsLinks.addEventListener("click", (e) => {
 
         e.preventDefault()
+
+        if(menuDropNotification.classList.contains("active")){
+            menuDropNotification.classList.remove("active")
+            notificationLinks.classList.remove("active")
+        }
 
         if(menuDropBrands.classList.contains("active")){
             menuDropBrands.classList.remove("active")
@@ -140,6 +147,34 @@ const showBrands = () => {
         }else{
             menuDropBrands.classList.add("active")
             brandsLinks.classList.add("active")
+        }
+
+    })
+
+}
+
+const showNotification = () => {
+
+    const notificationLinks = document.querySelector(".notification-links")
+    const menuDropNotification = document.querySelector(".menu-drop-notification")
+    const menuDropBrands = document.querySelector(".menu-drop-brands")
+    const brandsLinks = document.querySelector(".brands-links")
+    
+    notificationLinks.addEventListener("click", (e) => {
+        
+        e.preventDefault()
+
+        if(menuDropBrands.classList.contains("active")){
+            menuDropBrands.classList.remove("active")
+            brandsLinks.classList.remove("active")
+        }
+
+        if(menuDropNotification.classList.contains("active")){
+            menuDropNotification.classList.remove("active")
+            notificationLinks.classList.remove("active")
+        }else{
+            menuDropNotification.classList.add("active")
+            notificationLinks.classList.add("active")
         }
 
     })
@@ -159,13 +194,22 @@ const showSidebarRight = () => {
 
     const menuDropBrands = document.querySelector(".menu-drop-brands")
     const brandsLinks = document.querySelector(".brands-links")
+    const menuDropNotification = document.querySelector(".menu-drop-notification")
+    const notificationLinks = document.querySelector(".notification-links")
 
     settings.addEventListener("click", (e) => {
 
         e.preventDefault()
 
-        menuDropBrands.classList.remove("active")
-        brandsLinks.classList.remove("active")
+        if(menuDropNotification.classList.contains("active")){
+            menuDropNotification.classList.remove("active")
+            notificationLinks.classList.remove("active")
+        }
+
+        if(menuDropBrands.classList.contains("active")){
+            menuDropBrands.classList.remove("active")
+            brandsLinks.classList.remove("active")
+        }
 
         if(sidebarRight.classList.contains("active")){
             sidebarRight.classList.remove("active")
@@ -188,3 +232,5 @@ closeSidebarLeftBtn()
 
 showBrands()
 showSidebarRight()
+
+showNotification()
