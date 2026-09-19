@@ -1,20 +1,22 @@
-/* Fixe scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
+/* Fixe scrollbar */ 
+::-webkit-scrollbar{ 
+    width: 10px; 
+} 
 
-::-webkit-scrollbar-track {
-  background: #313a46;
-}
+::-webkit-scrollbar-track{ 
+    background: transparent; 
+} 
 
-::-webkit-scrollbar-thumb {
-  background-color: transparent;
-  border-radius: 5px;
-  transition: background-color .3s;
-}
+::-webkit-scrollbar-thumb{ 
+    background-color: transparent;
+    border-radius: 5px; 
+    border: 2.5px solid transparent; 
+    background-clip: content-box; 
+    transition: background-color .3s; 
+} 
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--ad-dark-menu-item);
+*:hover::-webkit-scrollbar-thumb{ 
+    background-color: var(--ad-dark-menu-item); 
 }
 
 /* BODY */
@@ -478,6 +480,13 @@ a .count-notification{
 }
 
 .items .menu-drop{
+    height: 200px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.items .menu-drop, 
+.items .menu-drop-notification{
     position: absolute;
     left: auto;
     right: 0;
@@ -486,13 +495,10 @@ a .count-notification{
     z-index: 55;
     width: 100%;
     min-width: 300px;
-    height: 200px;
     border-radius: .2rem;
     background-color: var(--ad-color-white);
     box-shadow: var(--ad-box-shadow);
     border: 1px solid var(--ad-border-color);
-    opacity: 0;
-    visibility: hidden;
     pointer-events: none;
     transform: translateY(4px);
     transition: all .3s ease;
@@ -537,4 +543,221 @@ a .count-notification{
 .menu-drop-content .item-menu-drop:hover{
     background-color: var(--ad-dropdown-link-hover-bg);
     transition: background .3s ease;
+}
+
+.items .menu-drop-notification {
+    height: 400px;
+    width: 320px;
+    pointer-events: auto;
+    transform: translateX(153px);
+}
+ 
+
+.menu-drop-notification .notification-content{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    /* overflow: hidden; */
+    grid-template-rows: 50px 1fr 55px;
+}
+
+.notification-content .header-notification{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--ad-border-color);
+    padding-inline: 1.25rem;
+}
+
+.header-notification .title{
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+.header-notification .clear-btn{
+   font-size: .9rem;
+   width: max-content;
+}
+
+.header-notification .title,
+.header-notification .clear-btn{
+    color: var(--ad-color-dark);
+}
+
+.content-notification {
+    min-height: 0;
+}
+
+.content-notification .container-notification{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding-inline: 1.25rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.container-notification .blocs-notification{
+    position: relative;
+}
+
+.container-notification .blocs-notification:last-child{
+    margin-bottom: 1rem;
+}
+
+.container-notification .blocs-notification:first-child .date{
+    padding-top: .5rem;
+}
+
+.blocs-notification .date{
+    font-size: .90rem;
+    margin-bottom: 5px;
+    text-transform: lowercase;
+}
+
+.blocs-notification .date::first-letter{
+    text-transform: uppercase;
+}
+
+
+.blocs-notification .group-blocs{
+    position: relative;
+    display: grid;
+    gap: .5rem;
+}
+
+.group-blocs .cards{
+    display: grid;
+    grid-template-columns: 35px 1fr;
+    border: 1px solid var(--ad-border-color);
+    border-radius: .2rem;
+    padding: 1rem;
+    gap: .7rem;
+    transition: all .3s ease;    
+}
+
+.group-blocs .cards:first-child{
+    background-color: #f3f5fb;
+}
+
+.group-blocs .cards:hover{
+    opacity: .8;
+    background-color: #f3f5fb;
+    transition: all .3s ease;
+}
+
+.cards .desc{
+    position: relative;
+}
+
+.desc .header-info{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.header-info h4{
+    margin: 0;
+    font-size: .80rem;
+}
+
+.header-info .time{
+    font-size: .8rem;
+}
+
+.desc .desc-notification{
+     margin: 0;
+    font-size: .95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 190px;
+}
+
+.cards svg.close{
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: -7px;
+    font-size: .7rem;
+    cursor: pointer;
+}
+
+.cards .icon{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.icon  .content-icons{
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.content-icons.notif{
+    background-color: var(--ad-color-primary);
+}
+
+.content-icons.info{
+    background-color: var(--ad-color-bg-ingo);
+}
+
+
+.content-icons > svg{
+    font-size: .88rem;
+    color: var(--ad-color-white);
+}
+
+.content-notification .footer-notification{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--ad-border-color);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.content-notification .footer-notification:hover{
+    background-color: #f4f6fb;
+    transition: all .3s ease;
+}
+
+.clear-all-btn{
+    width: max-content;
+    font-size: 1rem;
+}
+
+.content-notification 
+.container-notification::-webkit-scrollbar {
+    width: 10px;
+}
+
+.content-notification 
+.container-notification::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.content-notification 
+.container-notification::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2.5px solid transparent;
+    background-clip: content-box;
+}
+
+.content-notification:hover 
+.container-notification::-webkit-scrollbar-thumb {
+    background-color: var(--ad-dark-menu-item);
 }
