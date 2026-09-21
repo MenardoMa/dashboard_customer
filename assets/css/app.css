@@ -486,7 +486,8 @@ a .count-notification{
 }
 
 .items .menu-drop, 
-.items .menu-drop-notification{
+.items .menu-drop-notification,
+.items .menu-drop-user{
     position: absolute;
     left: auto;
     right: 0;
@@ -762,4 +763,100 @@ a .count-notification{
 .content-notification:hover 
 .container-notification::-webkit-scrollbar-thumb {
     background-color: var(--ad-dark-menu-item);
+}
+
+
+/* MENU DROP USER */
+
+.items .menu-drop-user{
+
+    top: 100%;
+    bottom: auto;
+    right: 0;
+
+    min-width: 220px;
+    pointer-events: auto;
+    transform: translateX(-4px) translateY(4px);
+    
+    /* opacity: 1; */
+    /* visibility: hidden; */
+}
+
+.items .menu-drop-user .menu-drop-user-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 0 1fr 50px;
+}
+
+.menu-drop-user-container .items-user-drop{
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-drop-user-container .items-user-drop:first-child{
+    border-bottom: 1px solid var(--ad-border-color);
+}
+
+.menu-drop-user-container .items-user-drop:last-child{
+    border-top: 1px solid var(--ad-border-color);
+}
+
+.items-user-drop .items-user-contenair{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.items-user-contenair.header-welcome{
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.items-user-contenair .welcome{
+    font-size: 1rem;
+}
+
+.items-user-contenair.container-links{
+    display: flex;
+    flex-direction: column;
+}
+
+.items-user-contenair.container-links a{
+    padding: .85rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .93rem;
+}
+
+.items-user-contenair.container-links a:first-child{
+    border-bottom: 1px solid var(--ad-border-color);
+}
+
+.container-links a svg{
+    font-size: .9rem;
+}
+
+.items-user-contenair.container-links a:hover{
+    background-color: #fafbfd;
+    opacity: 1;
+}
+
+.items-user-drop:last-child a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .95rem;
+    padding-left: 1rem;
+    background-color: #fafbfd;
+}
+
+.items-user-drop:last-child a:hover{
+    opacity: .7;
+    color: #fa5c7c;
 }
