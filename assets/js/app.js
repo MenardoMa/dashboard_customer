@@ -132,9 +132,15 @@ const showBrands = () => {
     const menuDropNotification = document.querySelector(".menu-drop-notification")
     const notificationLinks = document.querySelector(".notification-links")
 
+    const menuDropUser = document.querySelector(".menu-drop-user")
+
     brandsLinks.addEventListener("click", (e) => {
 
         e.preventDefault()
+
+        if(menuDropUser.classList.contains("active")){
+            menuDropUser.classList.remove("active")
+        }
 
         if(menuDropNotification.classList.contains("active")){
             menuDropNotification.classList.remove("active")
@@ -159,10 +165,16 @@ const showNotification = () => {
     const menuDropNotification = document.querySelector(".menu-drop-notification")
     const menuDropBrands = document.querySelector(".menu-drop-brands")
     const brandsLinks = document.querySelector(".brands-links")
+
+    const menuDropUser = document.querySelector(".menu-drop-user")
     
     notificationLinks.addEventListener("click", (e) => {
         
         e.preventDefault()
+
+        if(menuDropUser.classList.contains("active")){
+            menuDropUser.classList.remove("active")
+        }
 
         if(menuDropBrands.classList.contains("active")){
             menuDropBrands.classList.remove("active")
@@ -181,6 +193,36 @@ const showNotification = () => {
 
 }
 
+const showNavbarUser = () => {
+    
+    const user = document.querySelector(".items.user")
+    const menuDropUser = document.querySelector(".menu-drop-user")
+
+    const menuDropNotification = document.querySelector(".menu-drop-notification")
+    const menuDropBrands = document.querySelector(".menu-drop-brands")
+    const brandsLinks = document.querySelector(".brands-links")
+
+    user.addEventListener("click", (e) => {
+        e.preventDefault()
+
+        if(menuDropBrands.classList.contains("active")){
+            menuDropBrands.classList.remove("active")
+            brandsLinks.classList.remove("active")
+        }
+
+        if(menuDropNotification.classList.contains("active")){
+            menuDropNotification.classList.remove("active")
+        }
+
+        if(menuDropUser.classList.contains("active")){
+            menuDropUser.classList.remove("active")
+        }else{
+            menuDropUser.classList.add("active")
+        }
+
+    })
+}
+
 /**
  * 
  * Show SidebarRight
@@ -197,9 +239,15 @@ const showSidebarRight = () => {
     const menuDropNotification = document.querySelector(".menu-drop-notification")
     const notificationLinks = document.querySelector(".notification-links")
 
+    const menuDropUser = document.querySelector(".menu-drop-user")
+
     settings.addEventListener("click", (e) => {
 
         e.preventDefault()
+
+        if(menuDropUser.classList.contains("active")){
+            menuDropUser.classList.remove("active")
+        }
 
         if(menuDropNotification.classList.contains("active")){
             menuDropNotification.classList.remove("active")
@@ -234,3 +282,4 @@ showBrands()
 showSidebarRight()
 
 showNotification()
+showNavbarUser()

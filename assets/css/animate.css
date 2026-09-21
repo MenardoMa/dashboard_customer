@@ -44,7 +44,7 @@
 .menu-drop-brands.active{
     opacity: 1;
     visibility: visible;
-    pointer-events: all;
+    pointer-events: auto;
     transform: translateY(0);
     transition: all .3s ease;
 }
@@ -68,12 +68,23 @@
 .menu-drop-notification.active{
     opacity: 1;
     visibility: visible;
-    pointer-events: all;
+    pointer-events: auto;
     transform: translateX(153px) translateY(0);
     transition: all .3s ease;
 }
 
 .notification-links.active{
     color: var(--ad-color-dark);
+    transition: all .3s ease;
+}
+
+
+/* MENU DROP USER */
+
+.menu-drop-user.active{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-4px) translateY(0);
     transition: all .3s ease;
 }
