@@ -487,7 +487,8 @@ a .count-notification{
 
 .items .menu-drop, 
 .items .menu-drop-notification,
-.items .menu-drop-user{
+.items .menu-drop-user,
+.items .menu-drop-language{
     position: absolute;
     left: auto;
     right: 0;
@@ -832,6 +833,7 @@ a .count-notification{
 
 .items-user-contenair.container-links a:first-child{
     border-bottom: 1px solid var(--ad-border-color);
+    padding-block: 1rem;
 }
 
 .container-links a svg{
@@ -857,4 +859,62 @@ a .count-notification{
 .items-user-drop:last-child a:hover{
     opacity: .7;
     color: #fa5c7c;
+}
+
+
+/* MENU DROP LANGUAGZ */
+
+.items .menu-drop-language{
+    top: 100%;
+    bottom: auto;
+    right: 0;
+    min-width: 220px;
+    pointer-events: none;
+    transform: translateX(0) translateY(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+}
+
+.menu-drop-language ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-drop-language ul li{
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding: .9rem 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid var(--ad-border-color);
+    transition: all .3s ease;
+}
+
+.menu-drop-language ul li:hover{
+    background-color: var(--ad-dropdown-link-hover-bg);
+    transition: all .3s ease;
+}
+
+.menu-drop-language ul li:last-child{
+    border: none;
+}
+
+ul .flags-image{
+    width: 22px;
+}
+
+ul .flags-name{
+    text-transform: lowercase;
+    font-size: .95rem;
+}
+
+ul .flags-name::first-letter{
+    text-transform: uppercase;
+}
+
+.menu-drop-language ul li.active{
+    background-color: var(--ad-dropdown-link-hover-bg);
 }

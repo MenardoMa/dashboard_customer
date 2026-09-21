@@ -88,3 +88,13 @@
     transform: translateX(-4px) translateY(0);
     transition: all .3s ease;
 }
+
+/* MENU DROP LANGUAGZ */
+
+.menu-drop-language.active{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(0) translateY(0);
+    transition: all .3s ease;
+}

@@ -1,285 +1,329 @@
 
-const parent = document.querySelector(".parent")
+/**
+ * ============================================================
+ * VARIABLES DOM
+ * ============================================================
+ */
+
+const parent = document.querySelector(".parent");
+
+const navHamb = document.querySelector(".nav-hamb");
+const btnClose = document.querySelector(".btn-close");
+const btnCloseSidebarLeft = document.querySelector(".btn-closeSidebarLeft");
+
+const overlyne = document.querySelector(".overlyne");
+const sidebarRight = document.querySelector(".sidebarRight");
+const settings = document.querySelector(".settings");
+
+const accordionLinks = document.querySelectorAll(".accordion-link");
+
+const brandsLinks = document.querySelector(".brands-links");
+const menuDropBrands = document.querySelector(".menu-drop-brands");
+
+const notificationLinks = document.querySelector(".notification-links");
+const menuDropNotification = document.querySelector(".menu-drop-notification");
+
+const user = document.querySelector(".items.user");
+const menuDropUser = document.querySelector(".menu-drop-user");
+
+const language = document.querySelector(".items.language");
+const menuDropLanguage = document.querySelector(".menu-drop-language");
+
 
 /**
- * 
- * Hamburgeur
- * 
+ * ============================================================
+ * UTILITAIRES
+ * ============================================================
+ */
+
+/**
+ * Ferme tous les dropdowns de la navbar.
+ */
+const closeNavbarDropdowns = () => {
+
+    menuDropBrands?.classList.remove("active");
+    brandsLinks?.classList.remove("active");
+
+    menuDropNotification?.classList.remove("active");
+    notificationLinks?.classList.remove("active");
+
+    menuDropUser?.classList.remove("active");
+
+    menuDropLanguage?.classList.remove("active");
+    language?.classList.remove("active");
+};
+
+
+/**
+ * ============================================================
+ * SIDEBAR LEFT
+ * ============================================================
+ */
+
+/**
+ * Ouvre / ferme la sidebar gauche avec le hamburger.
  */
 const showSidebarLeft = () => {
-    
-    const navHamb = document.querySelector(".nav-hamb")
 
-    navHamb.addEventListener("click", (e) => {
-        
-        e.preventDefault()
+    navHamb?.addEventListener("click", (e) => {
 
-        if(!parent.classList.contains("active")){
-            parent.classList.add("active")
-        }else{
-            parent.classList.remove("active")
-        }
+        e.preventDefault();
 
-    })
+        parent?.classList.toggle("active");
 
-}
+    });
+
+};
+
 
 /**
- * 
- * Close sidebarLeft
- * 
+ * Ferme la sidebar gauche avec l'overlay.
  */
 const closeSidebarLeftOverlyne = () => {
-    
-    const overlyne = document.querySelector(".overlyne")
-    const sidebarRight = document.querySelector(".sidebarRight")
-    
-    overlyne.addEventListener("click", (e) => {
-        
-        e.preventDefault()
 
-        if(!sidebarRight.classList.contains("active")){
-            parent.classList.remove("active")
+    overlyne?.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        if (!sidebarRight?.classList.contains("active")) {
+            parent?.classList.remove("active");
         }
 
-        if(overlyne.classList.contains("active")){
-            overlyne.classList.remove("active")
-            sidebarRight.classList.remove("active")
-        }
+        overlyne?.classList.remove("active");
+        sidebarRight?.classList.remove("active");
 
-    })
-}
+    });
+
+};
+
 
 /**
- * 
- * Close sidebarLeft
- * 
+ * Ferme les sidebars avec les boutons de fermeture.
  */
 const closeSidebarLeftBtn = () => {
-    
-    const btnClose = document.querySelector(".btn-close")
-    const btnCloseSidebarLeft = document.querySelector(".btn-closeSidebarLeft")
 
-    const overlyne = document.querySelector(".overlyne")
-    const sidebarRight = document.querySelector(".sidebarRight")
+    btnClose?.addEventListener("click", (e) => {
 
-    btnClose.addEventListener("click", (e) => {
-        
-        e.preventDefault()
-        parent.classList.remove("active")
+        e.preventDefault();
 
-    })
+        parent?.classList.remove("active");
 
-    btnCloseSidebarLeft.addEventListener("click", (e) => {
-        
-        e.preventDefault()
-        
-        if(!sidebarRight.classList.contains("active")){
-            parent.classList.remove("active")
+    });
+
+
+    btnCloseSidebarLeft?.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        if (!sidebarRight?.classList.contains("active")) {
+            parent?.classList.remove("active");
         }
 
-        if(overlyne.classList.contains("active")){
-            overlyne.classList.remove("active")
-            sidebarRight.classList.remove("active")
-        }
+        overlyne?.classList.remove("active");
+        sidebarRight?.classList.remove("active");
 
-    })
+    });
 
-}
+};
 
 
 /**
- * 
- * Show Link sidebar accordion
- * 
+ * ============================================================
+ * ACCORDÉON
+ * ============================================================
  */
-const showLinkAccordeon = () => {
-    
-    const accordionLinks = document.querySelectorAll(".accordion-link");
 
-    accordionLinks.forEach(link => {
+const showLinkAccordeon = () => {
+
+    accordionLinks.forEach((link) => {
+
         link.addEventListener("click", (e) => {
-            
+
             e.preventDefault();
             e.stopPropagation();
 
-            // Cherche l'élément actuellement actif
-            const activeLink = document.querySelector(".accordion-link.active");
+            const activeLink = document.querySelector(
+                ".accordion-link.active"
+            );
 
-            // Si un élément est actif, on lui retire active
             if (activeLink) {
                 activeLink.classList.remove("active");
             }
 
-            // Si l'élément cliqué n'était pas l'ancien actif,
-            // on lui ajoute active
             if (activeLink !== e.currentTarget) {
                 e.currentTarget.classList.add("active");
             }
+
         });
+
     });
+
 };
 
+
 /**
- * 
- * Show Nav Drop Brands
- * 
+ * ============================================================
+ * MENU BRANDS
+ * ============================================================
  */
+
 const showBrands = () => {
-    
-    const brandsLinks = document.querySelector(".brands-links")
-    const menuDropBrands = document.querySelector(".menu-drop-brands")
-    const menuDropNotification = document.querySelector(".menu-drop-notification")
-    const notificationLinks = document.querySelector(".notification-links")
 
-    const menuDropUser = document.querySelector(".menu-drop-user")
+    brandsLinks?.addEventListener("click", (e) => {
 
-    brandsLinks.addEventListener("click", (e) => {
+        e.preventDefault();
 
-        e.preventDefault()
+        const isActive = menuDropBrands?.classList.contains("active");
 
-        if(menuDropUser.classList.contains("active")){
-            menuDropUser.classList.remove("active")
+        closeNavbarDropdowns();
+
+        if (!isActive) {
+
+            menuDropBrands?.classList.add("active");
+            brandsLinks?.classList.add("active");
+
         }
 
-        if(menuDropNotification.classList.contains("active")){
-            menuDropNotification.classList.remove("active")
-            notificationLinks.classList.remove("active")
-        }
+    });
 
-        if(menuDropBrands.classList.contains("active")){
-            menuDropBrands.classList.remove("active")
-            brandsLinks.classList.remove("active")
-        }else{
-            menuDropBrands.classList.add("active")
-            brandsLinks.classList.add("active")
-        }
+};
 
-    })
 
-}
+/**
+ * ============================================================
+ * MENU NOTIFICATION
+ * ============================================================
+ */
 
 const showNotification = () => {
 
-    const notificationLinks = document.querySelector(".notification-links")
-    const menuDropNotification = document.querySelector(".menu-drop-notification")
-    const menuDropBrands = document.querySelector(".menu-drop-brands")
-    const brandsLinks = document.querySelector(".brands-links")
+    notificationLinks?.addEventListener("click", (e) => {
 
-    const menuDropUser = document.querySelector(".menu-drop-user")
-    
-    notificationLinks.addEventListener("click", (e) => {
-        
-        e.preventDefault()
+        e.preventDefault();
 
-        if(menuDropUser.classList.contains("active")){
-            menuDropUser.classList.remove("active")
+        const isActive =
+            menuDropNotification?.classList.contains("active");
+
+        closeNavbarDropdowns();
+
+        if (!isActive) {
+
+            menuDropNotification?.classList.add("active");
+            notificationLinks?.classList.add("active");
+
         }
 
-        if(menuDropBrands.classList.contains("active")){
-            menuDropBrands.classList.remove("active")
-            brandsLinks.classList.remove("active")
-        }
+    });
 
-        if(menuDropNotification.classList.contains("active")){
-            menuDropNotification.classList.remove("active")
-            notificationLinks.classList.remove("active")
-        }else{
-            menuDropNotification.classList.add("active")
-            notificationLinks.classList.add("active")
-        }
+};
 
-    })
-
-}
-
-const showNavbarUser = () => {
-    
-    const user = document.querySelector(".items.user")
-    const menuDropUser = document.querySelector(".menu-drop-user")
-
-    const menuDropNotification = document.querySelector(".menu-drop-notification")
-    const menuDropBrands = document.querySelector(".menu-drop-brands")
-    const brandsLinks = document.querySelector(".brands-links")
-
-    user.addEventListener("click", (e) => {
-        e.preventDefault()
-
-        if(menuDropBrands.classList.contains("active")){
-            menuDropBrands.classList.remove("active")
-            brandsLinks.classList.remove("active")
-        }
-
-        if(menuDropNotification.classList.contains("active")){
-            menuDropNotification.classList.remove("active")
-        }
-
-        if(menuDropUser.classList.contains("active")){
-            menuDropUser.classList.remove("active")
-        }else{
-            menuDropUser.classList.add("active")
-        }
-
-    })
-}
 
 /**
- * 
- * Show SidebarRight
- * 
+ * ============================================================
+ * MENU USER
+ * ============================================================
  */
+
+const showNavbarUser = () => {
+
+    user?.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        const isActive = menuDropUser?.classList.contains("active");
+
+        closeNavbarDropdowns();
+
+        if (!isActive) {
+
+            menuDropUser?.classList.add("active");
+
+        }
+
+    });
+
+};
+
+
+/**
+ * ============================================================
+ * MENU LANGUAGE
+ * ============================================================
+ */
+
+const showNavBarLanguage = () => {
+
+    language?.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        const isActive =
+            menuDropLanguage?.classList.contains("active");
+
+        closeNavbarDropdowns();
+
+        if (!isActive) {
+
+            menuDropLanguage?.classList.add("active");
+            language?.classList.add("active");
+
+        }
+
+    });
+
+};
+
+
+/**
+ * ============================================================
+ * SIDEBAR RIGHT
+ * ============================================================
+ */
+
 const showSidebarRight = () => {
 
-    const settings = document.querySelector(".settings")
-    const overlyne = document.querySelector(".overlyne")
-    const sidebarRight = document.querySelector(".sidebarRight")
+    settings?.addEventListener("click", (e) => {
 
-    const menuDropBrands = document.querySelector(".menu-drop-brands")
-    const brandsLinks = document.querySelector(".brands-links")
-    const menuDropNotification = document.querySelector(".menu-drop-notification")
-    const notificationLinks = document.querySelector(".notification-links")
+        e.preventDefault();
 
-    const menuDropUser = document.querySelector(".menu-drop-user")
+        const isActive =
+            sidebarRight?.classList.contains("active");
 
-    settings.addEventListener("click", (e) => {
+        closeNavbarDropdowns();
 
-        e.preventDefault()
+        if (isActive) {
 
-        if(menuDropUser.classList.contains("active")){
-            menuDropUser.classList.remove("active")
+            sidebarRight?.classList.remove("active");
+            overlyne?.classList.remove("active");
+
+        } else {
+
+            sidebarRight?.classList.add("active");
+            overlyne?.classList.add("active");
+
         }
 
-        if(menuDropNotification.classList.contains("active")){
-            menuDropNotification.classList.remove("active")
-            notificationLinks.classList.remove("active")
-        }
+    });
 
-        if(menuDropBrands.classList.contains("active")){
-            menuDropBrands.classList.remove("active")
-            brandsLinks.classList.remove("active")
-        }
-
-        if(sidebarRight.classList.contains("active")){
-            sidebarRight.classList.remove("active")
-            overlyne.classList.remove("active")
-        }else{
-            sidebarRight.classList.add("active")
-            overlyne.classList.add("active")
-        }
-
-    })
-
-}
+};
 
 
+/**
+ * ============================================================
+ * INITIALISATION
+ * ============================================================
+ */
 
-showSidebarLeft()
-showLinkAccordeon()
-closeSidebarLeftOverlyne()
-closeSidebarLeftBtn()
+showSidebarLeft();
 
-showBrands()
-showSidebarRight()
+showLinkAccordeon();
 
-showNotification()
-showNavbarUser()
+closeSidebarLeftOverlyne();
+closeSidebarLeftBtn();
+
+showBrands();
+showNotification();
+showNavbarUser();
+showNavBarLanguage();
+
+showSidebarRight();
