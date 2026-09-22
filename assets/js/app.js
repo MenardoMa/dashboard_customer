@@ -6,6 +6,7 @@
  */
 
 const parent = document.querySelector(".parent");
+const main = document.querySelector("main")
 
 const navHamb = document.querySelector(".nav-hamb");
 const btnClose = document.querySelector(".btn-close");
@@ -307,6 +308,19 @@ const showSidebarRight = () => {
 
 };
 
+
+// const aminClose = () => {
+
+//     main.addEventListener("click", (e) => {
+//         e.preventDefault()
+        
+//         if(menuDropLanguage.classList.contains("active")){
+//             menuDropLanguage.classList.remove("active")
+//         }
+
+//     })
+
+// }
 
 /**
  * ============================================================

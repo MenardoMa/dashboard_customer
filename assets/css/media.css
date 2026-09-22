@@ -119,6 +119,12 @@
         transform: translateX(0) translateY(0);
     }
 
+    /* CONTENT CONTAINER */
+
+    .rows .cols:first-child{
+       grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 @media (min-width: 1024px) {
@@ -198,6 +204,12 @@
     .parent.active .sidebarLeftTop .logo-content,
     .parent.active .logo-content a  {
         justify-content: center;
+    }
+
+    /* CONTENT CONTAINER */
+
+    .container-content .rows{
+       grid-template-columns: .7fr 1fr;
     }
     
 }

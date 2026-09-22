@@ -98,3 +98,7 @@
     transform: translateX(0) translateY(0);
     transition: all .3s ease;
 }
+
+.items.language.active{
+    color: var(--ad-color-dark);
+}

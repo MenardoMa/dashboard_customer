@@ -59,13 +59,14 @@
     --ad-color-dark-menu-item: #8391a2;
 
     --ad-color-bg-sidebarleft: #313a46;
+    --ad-color-red: #fa5c7c;
 
     --ad-box-shadow: 0px 0px 35px 0px rgba(154, 161, 171, 0.15);
     --ad-box-shadow-sm: 0 .125rem .25rem rgba(0, 0, 0, 0.075);
     --ad-box-shadow-lg: 0 0 45px 0 rgba(0, 0, 0, 0.12);
     --ad-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
 
-    --ad-bg-badge: #0acf97;
+    --ad-bg-green: #0acf97;
     --ad-dark-btn-bg: #444e5a;
     --ad-border-color: #e7ebf0;
     --ad-dropdown-link-hover-bg: #f4f6fb;

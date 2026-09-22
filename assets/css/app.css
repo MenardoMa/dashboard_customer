@@ -918,3 +918,89 @@ ul .flags-name::first-letter{
 .menu-drop-language ul li.active{
     background-color: var(--ad-dropdown-link-hover-bg);
 }
+
+/* CONTENT CONTAINER */
+
+.container-content .rows{
+    position: relative;
+    width: 100%;
+    display: grid;
+    gap: 1.2rem;
+}
+
+.rows .cols{
+    position: relative;
+    width: 100%;
+}
+
+.rows .cols:first-child{
+    display: grid;
+    gap: 1.2rem;
+}
+
+.cols .card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: var(--ad-box-shadow);
+    background-color: var(--ad-color-white);
+    color: var(--ad-color-gray);
+}
+
+.card .card-container{
+    position: relative;
+    padding: 1.5rem;
+}
+
+.card-container .icon{
+    position: absolute;
+    top: 1.5rem;
+    left: auto;
+    right: 1.5rem;
+    background-color: rgba(114, 124, 245, .25);
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+.icon svg{
+    color: #727cf5;
+    font-size: 1rem;
+}
+
+.card-container .title-card{
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.card-container .info{
+    font-size: 1.125rem;
+    margin-block: 1.5rem;
+    color: var(--ad-color-dark);
+}
+
+.card-container .desc{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .4rem;
+    font-size: 1rem;
+}
+
+.desc svg{
+    font-size: .7rem;
+}
+
+.desc .green{
+    color: var(--ad-bg-green);
+}
+
+.desc .red{
+    color: var(--ad-color-red);
+}
