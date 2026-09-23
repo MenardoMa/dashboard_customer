@@ -224,7 +224,7 @@ ul .link-section{
 }
 
 a .badge-pages-menu{
-    background-color: var(--ad-bg-badge);
+    background-color: var(--ad-bg-green);
     padding: .1rem .3rem;
     font-size: .8rem;
     color: var(--ad-color-white);
@@ -506,6 +506,10 @@ a .count-notification{
     transition: all .3s ease;
 }
 
+.items .menu-drop-brands{
+    transform: translateY(-8px) scale(.95);
+}
+
 .menu-drop .menu-drop-content{
     position: relative;
     width: 100%;
@@ -551,7 +555,7 @@ a .count-notification{
     height: 400px;
     width: 320px;
     pointer-events: auto;
-    transform: translateX(153px) translateY(4px);
+    transform: translateX(153px) translateY(-8px) scale(.95);
     opacity: 0;
     visibility: hidden;
 }
@@ -775,7 +779,7 @@ a .count-notification{
     right: 0;
     min-width: 220px;
     pointer-events: none;
-    transform: translateX(-4px) translateY(4px);
+    transform: translateX(-4px) translateY(-8px) scale(.95);
     opacity: 0;
     visibility: hidden;
     transition: all .3s ease;
@@ -870,7 +874,7 @@ a .count-notification{
     right: 0;
     min-width: 220px;
     pointer-events: none;
-    transform: translateX(0) translateY(4px);
+    transform: translateX(0) translateY(-8px) scale(.98);
     opacity: 0;
     visibility: hidden;
     transition: all .3s ease;
@@ -919,88 +923,156 @@ ul .flags-name::first-letter{
     background-color: var(--ad-dropdown-link-hover-bg);
 }
 
-/* CONTENT CONTAINER */
 
-.container-content .rows{
-    position: relative;
-    width: 100%;
-    display: grid;
-    gap: 1.2rem;
-}
+/* CONTENT CONTAINER */ 
 
-.rows .cols{
-    position: relative;
-    width: 100%;
-}
+.container-content .rows{ 
+    position: relative; 
+    width: 100%; 
+    display: grid; 
+    gap: 1.2rem; 
+} 
 
-.rows .cols:first-child{
-    display: grid;
-    gap: 1.2rem;
-}
+.rows .cols{ 
+    position: relative; 
+    width: 100%; 
+    min-width: 0; 
+} 
 
-.cols .card{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    box-shadow: var(--ad-box-shadow);
-    background-color: var(--ad-color-white);
-    color: var(--ad-color-gray);
-}
+.rows .cols:first-child{ 
+    display: grid; 
+    gap: 1.2rem; 
+} 
+
+
+.cols .card{ 
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+    box-shadow: var(--ad-box-shadow); 
+    background-color: var(--ad-color-white); 
+    color: var(--ad-color-gray); 
+    overflow: hidden; 
+} 
 
 .card .card-container{
+    position: relative; 
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
+
+.card-container .card-item{
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
     padding: 1.5rem;
+    /* background-color: red; */
 }
 
 .card-container .icon{
-    position: absolute;
-    top: 1.5rem;
-    left: auto;
-    right: 1.5rem;
+    position: absolute; 
+    top: 1.5rem; 
+    right: 1.5rem; 
     background-color: rgba(114, 124, 245, .25);
     height: 40px;
-    width: 40px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 3px;
-}
+    width: 40px; 
+    text-align: center; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 3px; 
+} 
 
-.icon svg{
-    color: #727cf5;
-    font-size: 1rem;
-}
+.icon svg{ 
+    color: #727cf5; 
+    font-size: 1rem; 
+} 
 
-.card-container .title-card{
-    font-weight: 400;
-    font-size: 1rem;
+.card-container .title-card{ 
+    font-weight: 400; 
+    font-size: 1rem; 
+    margin: 0; 
+} 
+
+.card-container .info{ 
+    font-size: 1.5rem; 
     margin: 0;
+    color: var(--ad-color-dark); 
+} 
+
+.card-container .desc{ 
+    margin: 0; 
+    display: flex; 
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: .4rem; 
+    font-size: .91rem; 
+} 
+
+.desc svg{ 
+    font-size: .7rem; 
+} 
+
+.desc .green{ 
+    color: var(--ad-bg-green); 
+} 
+
+.desc .red{ 
+    color: var(--ad-color-red); 
+} 
+
+
+/* CHART */ 
+
+.card-container.last{
+    padding: 0  ;
 }
 
-.card-container .info{
+.card-container .chart-container{ 
+    position: relative; 
+    width: 100%; 
+    min-width: 0; 
+    overflow: hidden; 
+} 
+
+.card-container-header{
+    position: relative;
+    width: 100%;
+}
+
+.card-container .chart-title{ 
+    margin: 0;
     font-size: 1.125rem;
-    margin-block: 1.5rem;
-    color: var(--ad-color-dark);
+    padding-left: 1.125rem;
 }
 
-.card-container .desc{
-    margin: 0;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: .4rem;
-    font-size: 1rem;
-}
+.chart-container #chart{ 
+    position: relative; 
+    width: 100% !important; 
+    max-width: 100%; 
+    min-width: 0; 
+    height: 100%; 
+    min-height: 0 !important; 
+} 
 
-.desc svg{
-    font-size: .7rem;
-}
+/* APEXCHARTS */ 
 
-.desc .green{
-    color: var(--ad-bg-green);
-}
+.chart-container .apexcharts-canvas{ 
+    width: 100% !important; 
+    max-width: 100%; 
+} 
 
-.desc .red{
-    color: var(--ad-color-red);
+.chart-container .apexcharts-svg{ 
+    width: 100%; 
+    max-width: 100%; 
 }

@@ -15,8 +15,13 @@
     <!-- Linc JS -->
     <script src="./assets/js/app.js" type="module" defer></script>
     <script src="https://kit.fontawesome.com/14cf228f7f.js" crossorigin="anonymous"></script>
-    
 
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts/dist/apexcharts.core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts/dist/line.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts/dist/features/legend.js"></script>
+
+    <script src="./assets/js/apexcharts.js" type="module" defer></script>
     <!-- META DATA -->
 
 </head>
@@ -873,61 +878,74 @@
                 <div class="cols">
                     <div class="card">
                         <div class="card-container">
-                            <div class="icon">
-                                <i class="fas fa-user-friends"></i>
+                            <div class="card-item">
+                                <div class="icon">
+                                    <i class="fas fa-user-friends"></i>
+                                </div>
+                                <p class="title-card">Customers</p>
+                                <h3 class="info">36,254</h3>
+                                <p class="desc">
+                                    <i class="fas fa-long-arrow-alt-up green"></i>
+                                    <span class="green">5.27%</span> Since last month
+                                </p>
                             </div>
-                            <p class="title-card">Customers</p>
-                            <h3 class="info">36,254</h3>
-                            <p class="desc">
-                                <i class="fas fa-long-arrow-alt-up green"></i>
-                                <span class="green">5.27%</span> Since last month
-                            </p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-container">
-                            <div class="icon">
-                                <i class="fas fa-cart-plus"></i>
+                            <div class="card-item">
+                                <div class="icon">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <p class="title-card">Orders</p>
+                                <h3 class="info">5,543</h3>
+                                <p class="desc">
+                                    <i class="fas fa-long-arrow-alt-down red"></i>
+                                    <span class="red">1.08%</span> Since last month
+                                </p>
                             </div>
-                            <p class="title-card">Orders</p>
-                            <h3 class="info">5,543</h3>
-                            <p class="desc">
-                                <i class="fas fa-long-arrow-alt-down red"></i>
-                                <span class="red">1.08%</span> Since last month
-                            </p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-container">
-                            <div class="icon">
-                                <i class="fas fa-dollar-sign"></i>
+                            <div class="card-item">
+                                <div class="icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <p class="title-card">Revenue</p>
+                                <h3 class="info">$6,254</h3>
+                                <p class="desc">
+                                    <i class="fas fa-long-arrow-alt-down red"></i>
+                                    <span class="red">7.00%</span> Since last month
+                                </p>
                             </div>
-                            <p class="title-card">Revenue</p>
-                            <h3 class="info">$6,254</h3>
-                            <p class="desc">
-                                <i class="fas fa-long-arrow-alt-down red"></i>
-                                <span class="red">7.00%</span> Since last month
-                            </p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-container">
-                            <div class="icon">
-                                <i class="fas fa-wave-square"></i>
+                            <div class="card-item">
+                                <div class="icon">
+                                    <i class="fas fa-wave-square"></i>
+                                </div>
+                                <p class="title-card">Growth</p>
+                                <h3 class="info">+ 30.56%</h3>
+                                <p class="desc">
+                                    <i class="fas fa-long-arrow-alt-up green"></i>
+                                    <span class="green">4.87%</span> Since last month
+                                </p>
                             </div>
-                            <p class="title-card">Growth</p>
-                            <h3 class="info">+ 30.56%</h3>
-                            <p class="desc">
-                                <i class="fas fa-long-arrow-alt-up green"></i>
-                                <span class="green">4.87%</span> Since last month
-                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="cols">
                     <div class="card">
-                        <div class="card-container">
-                            <p>Graphe</p>
+                        <div class="card-container last">
+                            <div class="card-container-header">
+                                <h2 class="chart-title"> Projections vs actuals</h2>
+                            </div>
+                            <div class="chart-container">
+                                <div id="chart"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

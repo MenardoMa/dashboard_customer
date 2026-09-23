@@ -45,7 +45,7 @@
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     transition: all .3s ease;
 }
 
@@ -69,7 +69,7 @@
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateX(153px) translateY(0);
+    transform: translateX(153px) translateY(0) scale(1);
     transition: all .3s ease;
 }
 
@@ -85,7 +85,7 @@
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateX(-4px) translateY(0);
+    transform: translateX(-4px) translateY(0) scale(1);
     transition: all .3s ease;
 }
 
@@ -95,7 +95,7 @@
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0) scale(1);
     transition: all .3s ease;
 }
 
