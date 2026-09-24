@@ -457,7 +457,8 @@ nav .navbar{
     padding-block: 1rem;
     width: 100%;
     height: auto;
-    /* background-color: red; */
+    display: grid;
+    gap: 1rem;
 }
 
 .container-content .header-content{
@@ -993,7 +994,7 @@ ul .flags-name::first-letter{
     border-radius: 3px; 
 } 
 
-.icon svg{ 
+.card-item svg{ 
     color: #727cf5; 
     font-size: 1rem; 
 } 
@@ -1031,6 +1032,167 @@ ul .flags-name::first-letter{
     color: var(--ad-color-red); 
 } 
 
+/* ROW 2 */
+
+.container-content .rows.rows-2{
+    display: block;
+    position: relative;
+}
+
+.rows-2 .container-row-2{
+    position: relative;
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+}
+
+.container-row-2 .cols{
+    position: relative;
+    display: block !important;
+    width: 100%;
+    height: 100%;
+}
+
+.cols .container-cols{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.container-cols .card{
+    position: relative;
+    padding: 1rem;
+}
+
+.container-cols h2{
+    font-size: .95rem;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: .6rem;
+}
+
+.card .header-revenue{
+    position: relative;
+}
+
+.header-revenue .header-content{
+    padding: 0;
+    background-color: #f9f9fd;
+    display: grid;
+    margin-bottom: 1rem;
+}
+
+.header-content .content-item-revenue{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: 2rem;
+}
+.content-item-revenue .desc-name{
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+.content-item-revenue .value{
+    font-size: 1.85rem;
+    font-weight: 600;
+    color: var(--ad-color-dark);
+    margin-bottom: 0;
+}
+
+.value .puce{
+    position: absolute;
+    transform: translateX(-30px) translateY(10px);
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: #727cf5;
+}
+
+.content-item-revenue:nth-child(2) .puce{
+    background-color: #0acf97 
+}
+
+.card .graphe-content{
+    position: relative;
+    width: 100%;
+    height: 350px;
+    max-height: 350px;
+    min-height: 0;
+}
+
+
+/* CARD 2 */
+
+.card .location-content{
+    position: relative;
+}
+
+.location-content .worl{
+    position: relative;
+    width: 100%;
+    height: 280px;
+    max-height: 280px;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.location-content .progress-bar{
+    position: relative;
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+}
+
+.progress-bar .progress-bar-item{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.progress-bar-item p{
+    font-size: 1rem;
+    margin: 0;
+}
+
+.progress-bar-item .bar-progress{
+    position: relative;
+    display: grid;
+    gap: 1rem;
+    justify-content: center;
+    grid-template-columns: 1fr 40px;
+}
+
+.bar-progress .bar{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 5px;
+    background-color: var(--ad-color-light);
+    border-radius: 5px;
+}
+
+.bar-progress .bar::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: var(--progress, 87%);
+    height: 100%;
+    background-color: var(--ad-color-indigo);
+    border-radius: inherit;
+}
+
+.bar-progress .progress{
+    margin: 0;
+    font-weight: 500;
+    font-size: 1rem;
+    transform: translateY(-5px);
+}
 
 /* CHART */ 
 
@@ -1054,6 +1216,8 @@ ul .flags-name::first-letter{
     margin: 0;
     font-size: 1.125rem;
     padding-left: 1.125rem;
+    padding-top: 1.25rem;
+    font-weight: 500;
 }
 
 .chart-container #chart{ 

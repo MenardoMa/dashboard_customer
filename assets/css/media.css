@@ -125,6 +125,10 @@
        grid-template-columns: repeat(2, 1fr);
     }
 
+    .header-revenue .header-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 @media (min-width: 1024px) {
@@ -210,6 +214,17 @@
 
     .container-content .rows{
        grid-template-columns: .7fr 1fr;
+    }
+
+    /* CHART */ 
+    .card-container .chart-title{ 
+        padding-top: 0;
+    }
+
+    /* ROW 2 GRID */
+
+    .rows-2 .container-row-2{
+        grid-template-columns: .7fr .3fr;
     }
     
 }
