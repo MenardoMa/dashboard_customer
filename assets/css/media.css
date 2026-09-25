@@ -133,6 +133,20 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* ROW ROWS-3 */
+    .rows-3 .container-rows-3{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .rows-3 .container-rows-3 > :nth-child(2) { order: 1; }
+    .rows-3 .container-rows-3 > :nth-child(3) { order: 2; }
+
+    /* Le 1er card passe en dernier */
+    .rows-3 .container-rows-3 > :nth-child(1) {
+        order: 3;
+        grid-column: 1 / -1;
+    }
+
 }
 
 @media (min-width: 1024px) {
@@ -230,5 +244,17 @@
     .rows-2 .container-row-2{
         grid-template-columns: .7fr .3fr;
     }
-    
+
+    /* ROW ROWS-3 */
+    .rows-3 .container-rows-3{
+      grid-template-columns: .6fr .3fr .3fr;
+    }
+
+    .rows-3 .container-rows-3 > :nth-child(1),
+    .rows-3 .container-rows-3 > :nth-child(2),
+    .rows-3 .container-rows-3 > :nth-child(3) {
+        order: initial;
+        grid-column: auto;
+    }
+
 }
