@@ -64,6 +64,10 @@
         padding-inline: 24px;
     }
 
+    .content .container-content{
+        padding-inline: 30px;
+    }
+
     /** ACTIVE SIDE BAR LEFT LOGIQUE **/
     .parent.active .sidebarLeft{
         width: 260px;
