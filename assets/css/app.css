@@ -25,6 +25,12 @@
     display: grid;
 }
 
+.h2{
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    font-size: .9rem;
+}
+
 .sidebarRight,
 .sidebarLeft{
     position: fixed;
@@ -1223,6 +1229,134 @@ ul .flags-name::first-letter{
 
 .cols.table{
     display: block !important;
+}
+
+/* content-recent-activity */
+
+.col .content-recent-activity{
+    position: relative;
+}
+
+.content-recent-activity .card{
+    display: grid;
+    grid-template-rows: 50px 1fr;
+}
+
+.content-recent-activity h2{
+    margin-bottom: 0;
+}
+
+.content-recent-activity  .header,
+.content-recent-activity .content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+}
+
+.content-recent-activity .content{
+    overflow-y: auto;
+    display: grid;
+    padding-block: .5rem;
+}
+
+.content .item{
+    position: relative;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: .6rem;
+}
+
+.content .item::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 12px;
+    right: auto;
+    height: 100%;
+    width: 2px;
+    background-color: #f1f3fa;
+    z-index: 0;
+    margin-top: .5rem;
+}
+
+.item .icon{
+    position: relative;
+    padding-block: .5rem;
+}
+
+.icon .icon-parent{
+    position: relative;
+    height: 25px;
+    width: 25px;
+    background: #FFF;
+}
+
+.icon-parent .content-icon{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(114, 124, 245, .25) !important;
+    z-index: 1;
+    border: 2px solid transparent;
+    color: #727cf5;
+    border-radius: 50%;
+}
+
+.item-1 .content-icon{
+    background-color: rgba(57, 175, 209, .25) !important;
+    color: #39afd1;
+}
+
+.content-icon svg{
+    font-size: .7rem;
+}
+
+.item .content-ingo{
+    position: relative;
+    display: grid;
+    gap: .2rem;
+    padding-block: .5rem;
+}
+
+.content-ingo h3{
+    margin-bottom: .4rem;
+    font-size: 1rem;
+    font-weight: 800 !important;
+    color: #727cf5;
+}
+
+.item-1 h3{
+    color: #39afd1;
+}
+
+.content-ingo .desc,
+.content-ingo .time{
+    margin-bottom: 0;
+    font-size: .8rem;
+}
+
+.content-ingo .desc{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-ingo .time{
+    color: #98a6ad;
+}
+
+.bold{
+    font-weight: 700 !important;
+}
+
+.desc .bold{
+    margin-inline: .2rem;
+    color: var(--ad-color-bg-sidebarleft);
 }
 
 /* CHART */ 
