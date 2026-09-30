@@ -524,10 +524,89 @@ const chart3 = () => {
 };
 
 
+/**
+ * Chart 4 donut
+ */
+const chart4 = () => {
 
+    const options = {
+        series: [
+            300.56,
+            135.18,
+            48.96,
+            154.02
+        ],
 
+        chart: {
+            type: 'donut',
+            height: 220,
+            fontFamily: '"Nunito", sans-serif, serif',
+            toolbar: {
+                show: false
+            }
+        },
+
+        labels: [
+            'Direct',
+            'Affilliate',
+            'Sponsored',
+            'E-mail'
+        ],
+
+        // Correspond exactement aux .color-1 à .color-4
+        colors: [
+            '#727cf5',
+            '#fa5c7c',
+            '#0acf97',
+            '#ffbc00'
+        ],
+
+        plotOptions: {
+            pie: {
+                borderRadius: 5,
+                spacing: 3,
+
+                donut: {
+                    size: '68%',
+
+                    labels: {
+                        show: false
+                    }
+                }
+            }
+        },
+
+        stroke: {
+            width: 0
+        },
+
+        dataLabels: {
+            enabled: false
+        },
+
+        legend: {
+            show: false
+        },
+
+        tooltip: {
+            y: {
+                formatter: value => {
+                    return `$${value.toFixed(2)}`;
+                }
+            }
+        }
+    };
+
+    const chart = new window.ApexCharts(
+        document.querySelector('#chart4'),
+        options
+    );
+
+    chart.render();
+};
 
 
 chart1()
 chart2()
 chart3()
+chart4()
